@@ -12,7 +12,7 @@ void tpSort() {
     printf("Topological ordering is:\n");
     for (i = 0; i < n; i++) {
         compColsum();
-        for (j = 0; j < n && (select[j] || colsum[j]); j++);
+        for (j = 0; j < n && (!select[j] || colsum[j]); j++);
         if (j == n) break;
         printf("%d ", j);
         select[j] = 1;
